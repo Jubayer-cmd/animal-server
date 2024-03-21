@@ -5,6 +5,11 @@ const createCategory = async (category: ICategory) => {
   return await Category.create(category);
 };
 
+const getCategories = async () => {
+  return await Category.find();
+};
+
 export const CategoryService = {
   createCategory,
+  getCategories,
 };

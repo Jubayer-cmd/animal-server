@@ -11,4 +11,6 @@ router.post(
   AnimalController.createAnimal,
 );
 
+router.get('/', AnimalController.getAnimals);
+
 export const AnimalRoutes = router;

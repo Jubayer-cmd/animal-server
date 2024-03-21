@@ -14,6 +14,18 @@ const createAnimal = catchAsync(async (req, res) => {
   });
 });
 
+const getAnimals = catchAsync(async (req, res) => {
+  const result = await AnimalService.getAnimals();
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Animals are fetched successfully',
+    data: result,
+  });
+});
+
 export const AnimalController = {
   createAnimal,
+  getAnimals,
 };
